@@ -9,8 +9,14 @@ late Size size;
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
-  _initialiseFirebase();
-  runApp(const MyApp());
+
+  //for setting orientation to portrait only
+  SystemChrome.setPreferredOrientations(
+          [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
+      .then((value) {
+            _initialiseFirebase();
+            runApp(const MyApp());
+          });
 }
 
 class MyApp extends StatelessWidget {

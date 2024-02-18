@@ -20,6 +20,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_launcher_icons: ^0.13.1
   firebase_core: ^2.25.4
+  #for handling firebase authentication
+  firebase_auth: ^4.17.4
+  #for handling google sign-in
+  google_sign_in: ^6.2.1
 
 flutter_launcher_icons:
   android: "launcher_icon"

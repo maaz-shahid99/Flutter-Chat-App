@@ -1,4 +1,4 @@
-import 'package:chat_app/screens/home_screen.dart';
+import 'package:chat_app/screens/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../main.dart';
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 1500), () {
+    Future.delayed(const Duration(milliseconds: 2000), () {
 
       //exit  f ull screen
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
       //Navigate to home screen
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (_) => const HomeScreen()));
+          context, MaterialPageRoute(builder: (_) => const LoginScreen()));
     });
   }
 
@@ -53,7 +53,7 @@ class _SplashScreenState extends State<SplashScreen> {
               top: size.height * .15,
               right: size.width * .25,
               width: size.width * .5,
-              child: Image.asset('images/icons/icon.png'),
+              child: Image.asset('images/icons/chat.png'),
             ),
             Positioned(
               top: size.height * .5,
