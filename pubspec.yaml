@@ -19,11 +19,18 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_launcher_icons: ^0.13.1
+
+  #for integrating firebase
   firebase_core: ^2.25.4
+
   #for handling firebase authentication
   firebase_auth: ^4.17.4
+
   #for handling google sign-in
   google_sign_in: ^6.2.1
+
+  #for accessing cloud firestore database
+  cloud_firestore: ^4.15.5
 
 flutter_launcher_icons:
   android: "launcher_icon"

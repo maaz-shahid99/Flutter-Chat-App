@@ -1,3 +1,5 @@
+import 'package:chat_app/main.dart';
+import 'package:chat_app/widgets/chat_user_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -41,6 +43,14 @@ class _HomeScreenState extends State<HomeScreen> {
             Icons.add_comment_rounded,
             color: Colors.white,
           ),
+        ),
+        body: ListView.builder(
+          padding: EdgeInsets.only(top: size.height*0.01),
+          itemCount: 16,
+          physics: const BouncingScrollPhysics(),
+          itemBuilder: (context, index) {
+            return const ChatUserCard();
+          },
         ),
       ),
     );
