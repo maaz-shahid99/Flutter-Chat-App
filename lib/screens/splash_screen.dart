@@ -1,7 +1,9 @@
+import 'package:chat_app/api/apis.dart';
 import 'package:chat_app/screens/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../main.dart';
+import 'home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -17,7 +19,6 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(milliseconds: 2000), () {
-
       //exit  f ull screen
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
       SystemChrome.setSystemUIOverlayStyle(
@@ -26,15 +27,21 @@ class _SplashScreenState extends State<SplashScreen> {
         ),
       );
 
-      //Navigate to home screen
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (_) => const LoginScreen()));
+      if (APIs.auth.currentUser != null) {
+        //Navigate to HomeScreen
+        //Navigate to home screen
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (_) => const HomeScreen()));
+      } else {
+        //Navigate to home screen
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (_) => const LoginScreen()));
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
-
     //initialising media query
     size = MediaQuery.of(context).size;
 
